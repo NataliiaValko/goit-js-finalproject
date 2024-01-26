@@ -12,6 +12,7 @@ const galleryMarkup = galleryItems
   )
   .join("");
 
+let instanceModal;
 const onGalleryClick = (e) => {
   e.preventDefault();
 
@@ -24,7 +25,7 @@ const onGalleryClick = (e) => {
     if (e.code === "Escape") instanceModal.close();
   };
 
-  const instanceModal = basicLightbox.create(
+  instanceModal = basicLightbox.create(
     `<img src=${largeImageURL} alt=${largeImageAlt} />`,
     {
       onShow: () => {
